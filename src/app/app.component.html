@@ -1,0 +1,14 @@
+<div class="app__conteiner po-wrapper" id="main-container">
+  <div class="app__conteiner-conteudo">
+    <div *ngIf="usuarioLogado; else nao_logado">
+      <router-outlet name="home"></router-outlet>
+      <router-outlet></router-outlet>
+    </div>
+    <ng-template #nao_logado>
+      <router-outlet name="login"></router-outlet>
+      <router-outlet name="cadastro"></router-outlet>
+      <router-outlet name="redefinir-senha"></router-outlet>
+    </ng-template>
+  </div>
+  <loading-overlay></loading-overlay>
+</div>

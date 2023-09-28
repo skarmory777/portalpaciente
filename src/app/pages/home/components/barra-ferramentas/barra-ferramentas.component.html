@@ -1,0 +1,11 @@
+<div class="barra-ferramentas__container">
+  <po-toolbar
+    class="barra-ferramentas__container-toolbar"
+    [p-profile]="profile"
+    [p-profile-actions]="profileActions"
+    [p-notification-actions]="notificacoes"
+    [p-notification-number]="contadorNotificacoes()"
+  ></po-toolbar>
+</div>
+<app-alterar-senha-modal #alterarSenhaModal>
+</app-alterar-senha-modal>

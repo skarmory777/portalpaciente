@@ -1,0 +1,56 @@
+<div class="recuperar-senha-modal-container">
+  <div class="recuperar-senha-modal-container-conteudo">
+    <po-modal
+      [p-title]="literals.titulo"
+    >
+      <div class="mensagem" [innerHtml]="literals.mensagem"></div>
+
+      <form [formGroup]="form" class="formulario">
+        <div class="po-row">
+          <po-input
+            class="po-md-8"
+            id="cpf"
+            name="cpf"
+            formControlName="cpf"
+            [p-label]="literals.inputs.cpf.label"
+            [p-placeholder]="literals.inputs.cpf.placeholder"
+            [p-error-pattern]="literals.inputs.cpf.errorPatterns"
+            p-mask="999.999.999-99"
+            appCpfValidator
+          >
+          </po-input>
+          <po-datepicker
+            class="po-md-8"
+            id="data-nascimento"
+            name="dataNascimento"
+            formControlName="dataNascimento"
+            [p-label]="literals.inputs.dataNascimento.label"
+            [p-max-date]="dataAtual"
+            p-format="dd/mm/yyyy"
+          >
+          </po-datepicker>
+          <po-email
+            class="po-md-8"
+            id="email"
+            name="email"
+            formControlName="email"
+            [p-label]="literals.inputs.email.label"
+            [p-placeholder]="literals.inputs.email.placeholder"
+            p-clean
+          >
+          </po-email>
+        </div>
+      </form>
+
+      <po-modal-footer>
+        <po-button
+          p-kind="primary"
+          [p-label]="this.literals.botoes.enviarEmail.texto"
+          (p-click)="confirmar()"
+          [p-disabled]="!form?.valid"
+        >
+        </po-button>
+      </po-modal-footer>
+    </po-modal>
+  </div>
+</div>

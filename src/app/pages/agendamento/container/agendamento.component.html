@@ -1,0 +1,73 @@
+<div class="agendamento-container">
+  <div class="agendamento-container-conteudo">
+
+    <app-page-header
+      [habilitar-voltar]="true"
+      (voltarEvento)="voltar()"
+    >
+      <section conteudo>
+        <po-stepper #stepper>
+          <!-- TODO: criar componentes específicos para cada etapa que utilize o po-step e remover o código de exemplo -->
+          <po-step p-label="" >
+            <po-widget
+              class="po-md-12"
+              [p-title]="literals.etapas.dadosPessoais.titulo"
+            ></po-widget>
+          </po-step>
+
+          <po-step p-label="" >
+            <po-widget
+              class="po-md-12"
+              [p-title]="literals.etapas.convenio.titulo"
+            ></po-widget>
+          </po-step>
+
+          <po-step p-label="" >
+            <po-widget
+              class="po-md-12"
+              [p-title]="literals.etapas.procedimento.titulo"
+            ></po-widget>
+          </po-step>
+
+          <po-step p-label="" >
+            <po-widget
+              class="po-md-12"
+              [p-title]="literals.etapas.horario.titulo"
+            ></po-widget>
+          </po-step>
+
+          <po-step p-label="" >
+            <po-widget
+              class="po-md-12"
+              [p-title]="literals.etapas.confirmarAgendamento.titulo"
+            ></po-widget>
+          </po-step>
+        </po-stepper>
+      </section>
+
+      <footer rodape>
+        <po-button
+          *ngIf="!isUltimaEtapa()"
+          id="btn-alterar"
+          class="po-md-3"
+          p-kind="primary"
+          [p-label]="literals.botoes.proximo.texto"
+          (p-click)="proximo()"
+        >
+        </po-button>
+        <po-button
+          *ngIf="isUltimaEtapa()"
+          id="btn-concluir"
+          class="btn-concluir po-md-3"
+          p-icon="po-icon po-icon-calendar-ok"
+          [p-label]="literals.botoes.concluir.texto"
+          (p-click)="concluir()"
+        >
+        </po-button>
+      </footer>
+    </app-page-header>
+
+  </div>
+</div>
+
+

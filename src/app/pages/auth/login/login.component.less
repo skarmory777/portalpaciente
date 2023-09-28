@@ -1,0 +1,93 @@
+@import "../../../../styles/helpers.less";
+@import "../../../../styles/styleguide.less";
+
+app-login {
+  .login_container {
+    &-conteudo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100vh;
+
+      .login-side-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          @background-login-image;
+        background-size: cover;
+        background-position: 45%;
+        height: 100%;
+        padding: 0;
+        .text-box {
+          position: relative;
+          top: 80%;
+          transform: translateY(-50%);
+          padding-left: 45px;
+        }
+
+        .text-box span {
+          color: @whiteColor;
+          white-space: initial;
+          font-size: 50px;
+          font-family: "NunitoSans-ExtraLight";
+        }
+      }
+
+      .po-page-login-container {
+        .po-page-login-panel-content {
+          padding: 16px !important;
+          margin-bottom: 8px;
+          .po-field-icon {
+            --color-brand-01-dark: @primaryColor !important;
+          }
+
+        }
+
+        .po-page-login-recovery-link {
+          margin: 30px 40px 0 7px;
+        }
+
+        .po-page-login-register-link {
+          margin: 30px 40px 0 7px;
+          background-color: var(--color-dropdown-button-background-color);
+          border: 1px solid var(--color-dropdown-button-border-color);
+          border-radius: 3px;
+          color: var(--color-dropdown-button-color);
+          cursor: pointer;
+          height: 44px;
+          padding: 10px 16px;
+
+          &:hover {
+            border-color: @primaryDarkColor;
+          }
+
+          a {
+            height: 100%;
+            width: 100%;
+            display: block;
+
+            &:hover {
+              color: @primaryDarkColor;
+              text-decoration: none;
+            }
+          }
+        }
+
+        .po-switch {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    @media screen and (max-width: @sizes[mobile]) {
+      .login_container-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .login-side-image {
+        display: none;
+      }
+
+      .po-page-login-field-size {
+        width: calc(100% - 29px);
+      }
+    }
+  }
+}

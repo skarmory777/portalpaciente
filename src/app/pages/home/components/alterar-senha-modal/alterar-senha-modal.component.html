@@ -1,0 +1,55 @@
+<div class="alterar-senha-modal-container">
+  <div class="alterar-senha-modal-container-conteudo">
+    <po-modal
+      [p-title]="literals.titulo"
+    >
+      <div class="mensagem" [innerHtml]="literals.mensagem"></div>
+
+      <form [formGroup]="form" class="formulario">
+        <div class="po-row">
+          <po-password
+            id="senha-atual"
+            class="po-md-8"
+            name="senhaAtual"
+            formControlName="senhaAtual"
+            [p-label]="literals.inputs.senhaAtual.label"
+            p-clean
+          >
+          </po-password>
+          <po-password
+            id="senha"
+            class="po-md-8"
+            name="senha"
+            formControlName="senha"
+            [p-label]="literals.inputs.senha.label"
+            p-clean
+          >
+          </po-password>
+          <po-password
+            id="confirmacao-senha"
+            class="po-md-8"
+            name="confirmacaoSenha"
+            formControlName="confirmacaoSenha"
+            [p-label]="literals.inputs.confirmarNovaSenha.label"
+            [p-disabled]="!form?.get('senha').value"
+            p-error-pattern="Senhas não conferem"
+            p-clean
+          >
+          </po-password>
+        </div>
+
+        <app-senha-checklist [form]="form"></app-senha-checklist>
+      </form>
+
+      <po-modal-footer>
+        <po-button
+          p-kind="primary"
+          [p-label]="literals.botoes.confirmar.label"
+          (p-click)="confirmar()"
+          [p-disabled]="!form?.valid"
+        >
+        </po-button>
+      </po-modal-footer>
+    </po-modal>
+  </div>
+</div>

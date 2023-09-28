@@ -1,0 +1,17 @@
+<div class="dashboard__conteiner">
+  <div class="dashboard__conteiner-conteudo">
+    <po-widget
+      *ngFor="let card of literals.cards"
+      (p-click)="navegarParaEvento.emit(card.link)"
+    >
+      <div class="card">
+        <div class="card-icone">
+          <span [class]="card.class"></span>
+        </div>
+        <div class="card-titulo po-lg-8 po-sm-2">
+          {{ card.label }}
+        </div>
+      </div>
+    </po-widget>
+  </div>
+</div>

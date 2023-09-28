@@ -1,0 +1,52 @@
+@import "../../../../../styles/helpers.less";
+@import "../../../../../styles/styleguide.less";
+
+app-dashboard {
+  .dashboard__conteiner {
+    &-conteudo {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 80%;
+
+      po-widget {
+        padding: 0 4px;
+        .po-widget {
+          height: 100%;
+          &:hover {
+            .pointer;
+            background-color: darken(@primaryLightColor2, 10%);
+          }
+        }
+      }
+
+      .card {
+        display: grid;
+        row-gap: 2vh;
+
+        &-icone {
+          font-size: 28px;
+          color: @primaryColor;
+        }
+        &-titulo {
+          .estilo-fonte(normal, 700, 16px, 24px);
+          color: @neutralColor;
+          padding: 4px;
+        }
+      }
+
+      @media screen and (max-width: 960px) {
+        .card {
+          &-titulo {
+            font-size: 14px !important;
+            line-height: 16px !important;
+          }
+        }
+
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        width: 100% !important;
+        row-gap: 4px;
+      }
+    }
+  }
+}

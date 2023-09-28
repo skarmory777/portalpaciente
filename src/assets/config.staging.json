@@ -1,0 +1,9 @@
+{
+  "hostName": "localhost",
+  "apiUrl": "https://localhost:8051/api/hcg",
+  "apiVersion": "v1",
+  "userName": "mestre",
+  "password": "totvs",
+  "codColigada": 1,
+  "unidade": "Portal de Agendamento - Hospital Totvs"
+}

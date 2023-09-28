@@ -1,0 +1,19 @@
+<div class="senha-checklist-container">
+  <div class="senha-checklist-container-conteudo">
+    <div class="po-row">
+      <div class="info-senha">
+        <div>{{ literals.checklist.descricao }}</div>
+        <ul class="info-senha__check-list">
+          <li
+            *ngFor="let item of itensChecklist"
+            [ngClass]="{
+              'item-nao-atendido': isItemInvalido(item.regex)
+            }"
+          >
+            {{ item.texto }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

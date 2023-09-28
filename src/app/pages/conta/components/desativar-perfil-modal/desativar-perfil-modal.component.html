@@ -1,0 +1,35 @@
+<div class="desativar-perfil-container">
+  <div class="desativar-perfil-container-conteudo">
+    <po-modal
+      [p-title]="literals.titulo"
+    >
+      <div class="mensagem" [innerHtml]="literals.mensagem"></div>
+
+      <div class="po-row">
+        <po-password
+          name="senha"
+          [(ngModel)]="senha"
+          [p-label]="literals.input.label"
+          [p-placeholder]="literals.input.placeholder"
+          p-required
+        >
+        </po-password>
+      </div>
+
+      <po-modal-footer>
+        <po-button
+          [p-label]="literals.botoes.cancelar"
+          (p-click)="cancelar()"
+        >
+        </po-button>
+        <po-button
+          p-kind="primary"
+          [p-label]="literals.botoes.confirmar"
+          (p-click)="confirmar()"
+          [p-disabled]="!senha"
+        >
+        </po-button>
+      </po-modal-footer>
+    </po-modal>
+  </div>
+</div>

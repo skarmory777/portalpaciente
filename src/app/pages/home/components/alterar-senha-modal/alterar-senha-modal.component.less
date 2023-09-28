@@ -1,0 +1,29 @@
+@import "../../../../../styles/helpers.less";
+@import "../../../../../styles/styleguide.less";
+
+app-alterar-senha-modal {
+  .alterar-senha-modal-container {
+    &-conteudo {
+
+			.formulario {
+				margin-top: 1em;
+
+				po-password {
+					padding: 0;
+
+					po-label {
+						label {
+							padding-right: 0;
+						}
+
+						&::after {
+							content: " *";
+							color: @dangerColor;
+						}
+					}
+				}
+			}
+
+    }
+  }
+}

@@ -1,0 +1,329 @@
+// COLOR
+@primaryColor: #0c9abe;
+@primaryDarkColor: #097b98;
+@primaryDarkColor2: #075c72;
+@primaryLightColor: #ceeaf2;
+@primaryLightColor2: #f3fafc;
+@secondaryDarkColor: #052d3e;
+@tertiaryColor: #29b6c5;
+@tertiaryLight75Color: #c9ecf0;
+@neutralLightColor: #fbfbfb;
+@neutralColor: #4a5c60;
+@neutralDarkColor: #2c3739;
+@neutralLight2Color: #9da7a9;
+@neutralDark2Color: #1d2426;
+@neutralLight3Color: #b6bdbf;
+@neutralLight4Color: #dadedf;
+@neutralLight5Color: #eceeee;
+@neutralLight6Color: #d8d8d8;
+@secondaryColor: #0d729c;
+@muitoUrgenteColor: #fe7d1f;
+@urgenteColor: #fdc42c;
+@triagemColor: #f37c18;
+@successColor: #00b28e;
+@warningColor: #ea9b3e;
+@dangerColor: #c64840;
+@tertiaryDangerLightColor: #f9ecec;
+@dangerLightColor: #fcf6f5;
+@infoColor: #4a5c60;
+@whiteColor: #ffffff;
+@tertiaryLightColor: #eaf7f9;
+@userSettingsPrimary: #00b28e;
+@alertWarning: #ffb600;
+@alertLightWarning: #ffa800;
+@iconGrey: #9fa8aa;
+@poucoUrgente: #56b96b;
+@fonteData: #9b9b9b;
+@backgroundInformation: #d9d9d9;
+@blackAlpha30Color: rgba(0, 0, 0, 0.3);
+@blackAlpha40Color: rgba(0, 0, 0, 0.4);
+@blackAlpha10Color: rgba(0, 0, 0, 0.1);
+@dark60Alpha70Color: rgba(5, 45, 62, 0.7);
+@primaryAlpha50Color: rgba(12, 154, 190, 0.5);
+@shadowColor: rgba(0, 0, 0, 0.15);
+@shadowModal: 0 4px 16px 0 @blackAlpha30Color;
+@shadowInput: inset 0 1px 8px 0 @blackAlpha10Color;
+@shadowCard: 0 1px 4px 0 @blackAlpha30Color;
+@shadowFooter: 0 1px 3px 0 @shadowColor;
+@modalOverlay: @dark60Alpha70Color;
+@blackAlpha10Color: rgba(0, 0, 0, 0.1);
+@shadowPopover: 0 0 4px 0 @blackAlpha30Color;
+@shadowPopoverArrow: -1px -1px 1px 0 @blackAlpha10Color;
+// @background-login-image: url('../assets/img/login-background.jpg');
+@background-login-image: url('../assets/img/login-page.jpg');
+
+//SIZE
+@sizes: {
+  tablet: 1024px;
+  monitor_medico: 1280px;
+  notebook: 1366px;
+  desktop: 1920px;
+  mobile: 960px
+};
+
+@columnSizeDefault: 16px;
+
+//CONTENT
+@iconSearch: '\e985';
+
+//FONT
+.neutral-color {
+  color: @neutralColor;
+}
+
+.neutral-dark-2-color {
+  color: @neutralDark2Color;
+}
+
+.neutral-light-2-color {
+  color: @neutralLight2Color !important;
+}
+
+.neutral-light-3-color {
+  color: @neutralLight3Color !important;
+}
+
+.danger-color {
+  color: @dangerColor;
+}
+
+.info-color {
+  color: @infoColor;
+}
+
+.primary-color {
+  color: @primaryColor;
+}
+
+.user-settings-primary-color {
+  color: @userSettingsPrimary;
+}
+
+//FONT FAMILY
+.font-family {
+  font-family: NunitoSans;
+}
+
+.font-normal {
+  .font-family;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.font-200 {
+  .font-family;
+  font-style: normal;
+  font-weight: 200;
+}
+
+.font-bold {
+  .font-family;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.texto-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-default-padding {
+  padding: 24px 32px;
+}
+
+.modal-padding-24-32 {
+  padding: 24px 32px;
+}
+
+.modal-padding-20 {
+  padding: 24px 20px 24px 32px;
+}
+
+.page-default-padding {
+  div.po-page {
+    padding: 4vh 4.5vw 0px 5vw !important;
+  }
+}
+
+.page-default-content(@limite-altura: false, @tamanho-padding: 0) {
+  div.po-page {
+    padding: 4vh 4.5vw 5.2vh 5vw !important;
+    & when (@limite-altura = true) {
+      height: 93vh !important;
+    }
+  }
+  div.po-page-header {
+    padding: 0 0 32px !important;
+  }
+  div.po-page-content {
+    padding: 0 5px 100px 0 !important;
+    & when ( @tamanho-padding > 0) {
+      padding: 0 5px @tamanho-padding 0 !important;
+    }
+  }
+}
+
+.toolbar-padding {
+  padding-left: 5vw !important;
+  padding-right: 4.5vw !important;
+  z-index: 0;
+}
+
+.estilo-fonte(@style, @weight, @size, @height) {
+  font-family: NunitoSans;
+  font-style: @style;
+  font-weight: @weight;
+  font-size: @size;
+  line-height: @height;
+}
+
+.table-font-bold {
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.table-font-normal {
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.table-font-paginacao {
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.font-normal-16-24 {
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.font-normal-24-32 {
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.font-text-bold {
+  .font-family;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.font-text-small-italic {
+  .font-family;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+.font-text-small {
+  .font-family;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.font-text-small-12-32 {
+  .font-family;
+  font-size: 12px;
+  line-height: 32px;
+}
+
+.font-text-small-bold {
+  .font-family;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.font-subtitle {
+  .font-family;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.font-text-large {
+  .font-family;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.font-text {
+  .font-family;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.button-primary-footer {
+  min-width: 8vw;
+  border-radius: 3px;
+}
+
+.input-checkbox {
+  all: unset;
+  background-color: @whiteColor;
+  border: 1px solid @neutralLight3Color;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 8px 0 rgb(0 0 0 / 10%);
+  display: block;
+  height: 20px;
+  margin-right: 8px;
+  width: 20px;
+
+  &:checked {
+    &:before {
+      content: '\e93c';
+      font-family: PoIcon !important;
+      font-size: 18px;
+      line-height: 20px;
+      background-color: @primaryColor;
+      border: 1px solid @primaryColor;
+      box-shadow: none;
+      color: @whiteColor;
+      line-height: 20px;
+    }
+  }
+}
+
+.input-checkbox-cicle {
+  .input-checkbox;
+  border-radius: 12px;
+
+  &:checked {
+    &:before {
+      border-radius: 12px;
+    }
+  }
+}
+
+.align-items-center {
+  align-items: center;
+}
+.neutral-light-6-color {
+  color: @neutralLight6Color;
+}
+
+.border-danger {
+  border: 1px solid @dangerColor !important;
+}
+
+.link-desabilidado {
+  color: @neutralLight3Color !important;
+  pointer-events: none;
+}
+

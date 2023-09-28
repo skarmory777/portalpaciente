@@ -1,0 +1,43 @@
+export const contaEn = {
+  titulo: 'Register on Portal',
+  subTitulo: 'Fields marked with a red asterisk are required',
+  informacoesPessoais: 'Personal Information',
+  informacoesContato: 'Contact Information',
+  informacoesConvenio: 'Convenio Information',
+  inforcacoesAcesso: 'Access Information',
+  checkListSenha: {
+    descricao: 'Password must contain:',
+    quantidadeMinimaCaracteres: 'Minimum 8 characters.',
+    quantidadeLetraMaiscula: 'At least 1 uppercase letter.',
+    quantidadeLetraMinuscula: 'At least 1 lowercase letter.',
+    quantidadeCaracteresNumericos: 'At least 1 number.',
+  },
+  labels: {
+    cpf: 'CPF',
+    nomeCompleto: 'Full Name',
+    nomeMae: 'Mother Name',
+    dataNascimento: 'Birth Date',
+    sexo: 'Biological Gender',
+    telefone: 'Phone',
+    email: 'Email',
+    particular: 'PRIVATE - I will not use a convenio',
+    convenio: 'Convenio',
+    senha: 'Password',
+    confirmacaoSenha: 'Confirm Password',
+  },
+  placeHolder: {
+    cpf: 'Numbers only',
+    nomeCompleto: 'Ex: Pedro Lucas Costa',
+    nomeMae: 'Ex: Ana Clara Fogaça',
+    telefone: 'Enter your phone number',
+    email: 'Enter your email',
+  },
+  errorPatterns: {
+    cpf: 'Invalid CPF',
+  },
+  telaConfirmacaoSair: {
+    literals: { cancel: 'No', confirm: 'Yes' },
+    title: 'Do you really want to exit the registration?',
+    message: '<h3>By doing this, the entered data will be lost?</h3>',
+  },
+};

@@ -1,0 +1,146 @@
+@import "styleguide.less";
+@import "helpers.less";
+
+:root {
+  --color-button-background-color-primary: @primaryColor;
+  --color-button-background-color-primary-hover: @primaryDarkColor;
+  --color-button-background-color-primary-pressed: @primaryDarkColor2;
+  --color-button-color-primary-disabled: @whiteColor;
+  --color-button-background-color-primary-disabled: @neutralLight3Color;
+  --color-outline-focused: transparant;
+  --color-button-background-color-pressed: @whiteColor;
+  --color-button-color-pressed: @primaryDarkColor2;
+  --color-button-color-hover: @primaryDarkColor;
+  --outline-color-focused: none;
+  --color-button-border-pressed: @primaryColor;
+  --color-button-background-color-hover: transparant;
+  --color-table-background-color-overlay: @modalOverlay;
+  --color-overlay-background-color-overlay: @modalOverlay;
+  --color-modal-color-overlay: @modalOverlay;
+  --color-button-color: @primaryColor;
+  --color-button-border: @primaryColor;
+  --color-button-border-hover: @primaryDarkColor;
+  --color-button-color-danger: @dangerColor;
+  --color-button-border-danger: @dangerColor;
+  --color-button-border-danger-hover: @dangerColor;
+  --color-button-color-danger-hover: @dangerColor;
+  --color-button-background-color-danger-hover: transparant;
+  --color-button-background-color-danger-pressed: transparant;
+  --color-button-border-danger-pressed: @dangerColor;
+  --color-button-color-danger-pressed: @dangerColor;
+  --color-button-background-color-link-hover: transparant;
+  --color-button-background-color-link-pressed: transparant;
+  --border-width-md: 1px;
+  --color-page-login-background-color: transparant;
+  --font-family: "NunitoSans";
+  --color-page-header-color-title: @primaryColor;
+  --color-primary: @primaryColor;
+  --color-toolbar-background-color-toolbar: transparant;
+}
+
+.po-page {
+  background-color: @neutralLightColor !important;
+  .po-page-header-actions {
+    float: left;
+  }
+}
+
+.po-input,
+.po-select {
+  --background: @whiteColor !important;
+}
+
+* {
+  &:focus {
+    outline-width: 2px !important;
+    outline-offset: 0px !important;
+    outline-color: var(--outline-color-focused) !important;
+  }
+}
+
+.po-menu-overlay {
+  background-color: @dark60Alpha70Color !important;
+}
+
+.po-accordion-item-header-button,
+.pep-accordion-item-header-button {
+  outline-width: 0px !important;
+}
+
+.po-toaster-button-close {
+  button {
+    outline-width: 0px !important;
+    background-color: transparent !important;
+  }
+}
+
+.container-po-checkbox {
+  .po-checkbox {
+    background-color: @whiteColor;
+    border: 1px solid @neutralLight3Color;
+    border-radius: 2px;
+    min-width: 20px;
+    min-height: 20px;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  [aria-checked="true"].po-checkbox {
+    background-color: @primaryColor;
+  }
+}
+
+app-root {
+  .po-divider {
+    padding: 0px !important;
+  }
+}
+
+po-toolbar {
+  .po-toolbar {
+    border-bottom: 1px solid @neutralLight5Color;
+  }
+}
+
+po-modal {
+  &.no-footer {
+    .po-modal-footer,
+    .pep-modal-footer {
+      .hidden;
+    }
+  }
+  &.show-footer {
+    .po-modal-footer,
+    .pep-modal-footer {
+      display: block !important;
+    }
+  }
+}
+
+.po-input-required .po-field-container div.po-field-container-content > input {
+  border: 1px solid @dangerColor !important;
+  outline: none;
+  color: @dangerColor;
+}
+
+#main-container {
+  background: @neutralLightColor;
+  height: 100vh;
+}
+
+@media only screen and (max-width: @sizes[mobile]) {
+  .po-modal-footer {
+    po-button {
+      margin-bottom: 0.5em;
+      display: flex;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+}

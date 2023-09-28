@@ -1,0 +1,29 @@
+<div class="conta_container">
+  <div class="conta_container-conteudo">
+    <app-page-header
+      [titulo]="literals.titulo"
+      [habilitar-voltar]="true"
+      (voltarEvento)="cancelar(cadastro?.form)"
+    >
+      <section title>{{ literals.titulo }}</section>
+      <section conteudo>
+        <section class="titulo-conteudo">
+          <h4>{{ literals.subTitulo }}</h4>
+        </section>
+        <app-cadastro #cadastro> </app-cadastro>
+      </section>
+      <section rodape>
+        <po-button
+          id="btn-criar"
+          class="po-md-3"
+          p-kind="primary"
+          [p-label]="literals.labels.cadastrar"
+          (p-click)="criarUsuario(cadastro.form.value)"
+          [p-loading]="loading"
+          [p-disabled]="!cadastro?.form?.valid"
+        >
+        </po-button>
+      </section>
+    </app-page-header>
+  </div>
+</div>

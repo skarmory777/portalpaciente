@@ -1,0 +1,12 @@
+@import "styleguide.less";
+@import "helpers.less";
+
+.font-sub-titulo-secao {
+  .estilo-fonte(normal, bold, 16px, 24px);
+  .pb(8px);
+  color: @neutralColor;
+  &::after {
+    content: " *";
+    color: @dangerColor;
+  }
+}

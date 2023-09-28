@@ -1,0 +1,55 @@
+@import "../../../../../styles/helpers.less";
+@import "../../../../../styles/styleguide.less";
+@import "../../../../../styles/form.less";
+
+app-cadastro {
+  .cadastro_container {
+    &-conteudo {
+      .po-page {
+        margin-left: 0px;
+        width: 100%;
+        .po-page-content {
+          padding: 4vh 11vw;
+        }
+      }
+
+      .titulo-secao {
+        display: grid;
+        row-gap: 4vh;
+        padding-bottom: 2vh;
+      }
+
+      &-formulario {
+        display: grid;
+        row-gap: 1vw;
+
+        .convenio {
+          .po-row {
+            padding-left: 8px;
+          }
+        }
+
+        .info-senha {
+          margin: 8px;
+        }
+      }
+
+      .termo {
+        padding: 8px;
+      }
+
+      .botoes > :first-child {
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        row-gap: 1vw;
+      }
+    }
+  }
+
+  @media screen and (min-width: @sizes[mobile]) {
+    .info-senha {
+      width: 47.5vw !important;
+    }
+  }
+}

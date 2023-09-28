@@ -1,0 +1,31 @@
+<div class="login_container">
+  <div class="login_container-conteudo">
+    <div>
+      <po-page-login
+        p-logo="assets/img/logo_totvs.png"
+        p-secondary-logo="assets/img/totvs_h_pos_grafite.png"
+        p-login-pattern="^(\d*)$"
+        [p-product-name]="literals.nomeProduto"
+        [p-literals]="literals"
+        [p-languages]="languages"
+        (p-login-submit)="login($event)"
+        [p-recovery]="recuperarSenha.bind(this)"
+        [p-exceeded-attempts-warning]="exceededAttempts"
+        [p-loading]="loading"
+        p-register-url="/cadastro"
+      >
+      </po-page-login>
+    </div>
+    <div class="login-side-image">
+      <div class="text-box po-sm-6 po-md-6 po-lg-10 po-xl-7">
+        <h2>
+          <span>{{ literals.textoImagemLogin }}</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<app-recuperar-senha-modal
+  #recuperarSenhaModal
+>
+</app-recuperar-senha-modal>

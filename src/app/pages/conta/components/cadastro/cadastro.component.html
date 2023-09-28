@@ -1,0 +1,185 @@
+<div class="cadastro_container">
+  <div class="cadastro_container-conteudo">
+    <form [formGroup]="form">
+      <div class="cadastro_container-conteudo-formulario">
+        <section class="informacoes-pessoais">
+          <div class="font-sub-titulo-secao">
+            {{ literals.informacoesPessoais }}
+          </div>
+          <div class="po-row">
+            <po-input
+              id="cpf"
+              class="po-md-3"
+              formControlName="cpf"
+              [p-label]="literals.labels.cpf"
+              [p-placeholder]="literals.placeHolder.cpf"
+              [p-error-pattern]="literals.errorPatterns.cpf"
+              [p-disabled]="desabilitarDadosPessoais"
+              p-mask="999.999.999-99"
+              appCpfValidator
+            >
+            </po-input>
+            <po-input
+              id="nome-completo"
+              class="po-md-3"
+              name="nomeCompleto"
+              formControlName="nome"
+              [p-label]="literals.labels.nomeCompleto"
+              [p-placeholder]="literals.placeHolder.nomeCompleto"
+              [p-disabled]="desabilitarDadosPessoais"
+              (p-change)="titleCase(form?.get('nome'))"
+            >
+            </po-input>
+            <po-input
+              id="nome-mae"
+              class="po-md-3"
+              name="nomeMae"
+              formControlName="nomeMae"
+              [p-label]="literals.labels.nomeMae"
+              [p-placeholder]="literals.placeHolder.nomeMae"
+              [p-disabled]="desabilitarDadosPessoais"
+              (p-change)="titleCase(form?.get('nomeMae'))"
+            >
+            </po-input>
+          </div>
+          <div class="po-row">
+            <po-datepicker
+              id="data-nascimento"
+              class="po-md-3"
+              formControlName="dataNascimento"
+              [p-label]="literals.labels.dataNascimento"
+              [p-max-date]="dataAtual"
+              [p-disabled]="desabilitarDadosPessoais"
+              p-format="dd/mm/yyyy"
+              p-icon="po-icon-calendar"
+            >
+            </po-datepicker>
+            <po-select
+              id="sexo"
+              name="sexo"
+              class="po-md-3"
+              formControlName="sexo"
+              [p-label]="literals.labels.sexo"
+              [p-disabled]="desabilitarDadosPessoais"
+              [p-options]="[
+                { label: 'Masculino', value: 'M' },
+                { label: 'Feminino', value: 'F' }
+              ]"
+              p-clean
+            >
+            </po-select>
+          </div>
+        </section>
+        <section class="informacoes-contato">
+          <div class="font-sub-titulo-secao">
+            {{ literals.informacoesContato }}
+          </div>
+          <div class="po-row">
+            <po-input
+              id="celular"
+              class="po-md-3"
+              formControlName="celular"
+              [p-label]="literals.labels.telefone"
+              [p-placeholder]="literals.placeHolder.telefone"
+              p-mask="(99)99999-9999"
+              p-mask-format-model="true"
+              p-icon="po-icon-telephone"
+              p-clean
+            >
+            </po-input>
+            <po-email
+              id="email"
+              class="po-md-3"
+              formControlName="email"
+              [p-label]="literals.labels.email"
+              [p-placeholder]="literals.placeHolder.email"
+              p-clean
+            >
+            </po-email>
+          </div>
+        </section>
+        <section class="convenio">
+          <div class="font-sub-titulo-secao">
+            {{ literals.informacoesConvenio }}
+          </div>
+          <div class="po-row">
+            <po-checkbox
+              id="particular"
+              name="particular"
+              formControlName="particular"
+              [p-label]="literals.labels.particular"
+              (p-change)="definirConvenioParticular($event)"
+            >
+            </po-checkbox>
+          </div>
+          <div class="flex-row">
+            <po-combo
+              id="convenio"
+              name="convenio"
+              class="po-md-3"
+              formControlName="codConvenio"
+              [p-label]="literals.labels.convenio"
+              [p-options]="listaConvenio"
+              (p-change)="selecionarConvenio($event)"
+            >
+            </po-combo>
+          </div>
+        </section>
+        <section *ngIf="exibirInfoAcesso">
+          <div class="font-sub-titulo-secao">
+            {{ literals.inforcacoesAcesso }}
+          </div>
+          <div class="po-row">
+            <po-password
+              id="senha"
+              class="po-md-3"
+              name="senha"
+              formControlName="senha"
+              [p-label]="literals.labels.senha"
+              p-clean
+            >
+            </po-password>
+            <po-password
+              id="confirmacao-senha"
+              class="po-md-3"
+              name="confirmacaoSenha"
+              formControlName="confirmacaoSenha"
+              [p-label]="literals.labels.confirmacaoSenha"
+              [p-disabled]="!form?.get('senha').value"
+              p-error-pattern="Senha não conferem"
+              p-clean
+            >
+            </po-password>
+          </div>
+
+          <app-senha-checklist [form]="form"></app-senha-checklist>
+        </section>
+      </div>
+      <section *ngIf="exibirInfoAcesso" class="termo">
+        <div class="po-row">
+          <po-checkbox
+            id="termo-servico"
+            name="termoServico"
+            formControlName="termoServico"
+            p-label=" "
+          >
+          </po-checkbox>
+          <span [innerHTML]="literals.labels.termoServico"></span>
+        </div>
+        <div class="flex">
+          <po-checkbox
+            id="politica-privacidade"
+            name="politicaPrivacidade"
+            formControlName="politicaPrivacidade"
+            p-label=" "
+          >
+          </po-checkbox>
+          <span [innerHTML]="literals.labels.politicaPrivacidade"></span>
+        </div>
+      </section>
+    </form>
+    <div class="botoes">
+      <ng-content class="botoes" select="[botoes]"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="page-header__container">
+  <div class="page-header__container-conteudo">
+    <div class="cabecalho" [ngClass]="{ 'no-back': !exibirBotaoVoltar }">
+      <div
+        *ngIf="exibirBotaoVoltar"
+        id="btn-voltar"
+        (click)="voltar()"
+        class="cabecalho-voltar po-icon po-icon-arrow-left"
+      ></div>
+
+      <div
+        id="tit-cabecalho"
+        class="cabecalho-titulo po-font-title"
+        (click)="voltar()"
+      >
+        {{ cabecalho }}
+      </div>
+      <div class="cabecalho-subtitulo">{{ titulo }}</div>
+    </div>
+    <div class="corpo-conteudo po-page-content">
+      <ng-content select="[conteudo]"></ng-content>
+      <div class="footer">
+        <ng-content select="[rodape]"> </ng-content>
+      </div>
+    </div>
+  </div>
+</div>

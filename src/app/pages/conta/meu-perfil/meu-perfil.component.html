@@ -1,0 +1,49 @@
+<div class="conta_container">
+  <div class="conta_container-conteudo">
+    <app-page-header
+      [titulo]="literals.titulo"
+      [habilitar-voltar]="true"
+      (voltarEvento)="cancelar(cadastro?.form)"
+    >
+      <section conteudo>
+        <section class="titulo-conteudo">
+          <h4>
+            {{ literals.subTitulo }}
+          </h4>
+        </section>
+        <app-cadastro
+          #cadastro
+          [desabilitar-dados-pessoais]="true"
+          [exibir-info-acesso]="false"
+          [usuario]="usuario"
+        >
+        </app-cadastro>
+      </section>
+      <section rodape>
+        <po-button
+          id="btn-desativar-cadastro"
+          class="po-md-3"
+          p-danger="true"
+          [p-label]="literals.botoes.desativarCadastro"
+          (p-click)="confirmarDesativarPerfil()"
+        >
+        </po-button>
+        <po-button
+          id="btn-alterar"
+          class="po-md-3"
+          p-kind="primary"
+          [p-label]="literals.botoes.alterarDados"
+          (p-click)="alterarDados(cadastro?.form)"
+          [p-disabled]="!cadastro.form?.valid || cadastro.form?.pristine"
+        >
+        </po-button>
+      </section>
+    </app-page-header>
+  </div>
+</div>
+<app-desativar-perfil-modal
+  #desativarPerfilModal
+  [usuario]="usuario"
+  (permiteDesativerPerfil)="desativarPerfil($event)"
+>
+</app-desativar-perfil-modal>

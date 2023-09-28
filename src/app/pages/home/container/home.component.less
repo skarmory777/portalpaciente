@@ -1,0 +1,64 @@
+@import "../../../../styles/helpers.less";
+@import "../../../../styles/styleguide.less";
+
+app-home {
+  .home__container {
+    .menu {
+      &__mobile {
+        overflow: hidden;
+        background-color: @neutralLightColor;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        &-item {
+          display: inline-flex;
+          justify-content: center;
+          a {
+            float: left;
+            display: block;
+            color: @primaryColor;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    &.po-collapsed-menu {
+      .po-page {
+        --menu-width: 76px;
+      }
+    }
+
+    &-conteudo {
+      padding: 2.3vw;
+
+      .titulo {
+        padding: 8px;
+        &-boasvindas {
+          .estilo-fonte(normal, 600, 32px, 44px);
+          color: @primaryColor;
+        }
+      }
+    }
+
+    @media only screen and (max-width: @sizes[mobile]) {
+      .menu {
+        &__mobile {
+          display: grid;
+          grid-auto-flow: column;
+        }
+        &__padrao {
+         display: none;
+        }
+      }
+
+      &-conteudo {
+        padding: 10vw 1vw 1vw;
+      }
+    }
+  }
+}
